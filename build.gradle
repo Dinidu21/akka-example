@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+  compile 'com.typesafe.akka:akka-actor-typed_2.13:2.6.5'
+  compile 'ch.qos.logback:logback-classic:1.2.3'
+}
+
+mainClassName = "com.example.Main"
+
+run {
+  standardInput = System.in
+}
