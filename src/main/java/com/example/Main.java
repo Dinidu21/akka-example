@@ -3,23 +3,22 @@ package com.example;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
-import java.io.IOException;
+import scala.concurrent.Await;
+import scala.concurrent.duration.Duration;
+import java.util.concurrent.TimeUnit;
 
-class Main {
+public class Main {
 
     public static void main(String[] args) {
-
-        ActorSystem system = ActorSystem.create();
-        ActorRef actorARef = system.actorOf(Props.create(ActorA.class));
-        actorARef.tell(new MessageA("Starting"), actorARef);
+        ActorSystem system = ActorSystem.create("akka-example");
+        ActorRef actorARef = system.actorOf(Props.create(ActorA.class), "actorA");
+        actorARef.tell(new MessageA("Starting"), ActorRef.noSender());
 
         try {
-            System.out.println("Press ENTER twice to end program.");
-            System.in.read();
-        } catch (IOException ignored) {
-        } finally {
-            system.terminate();
-            System.out.println("Terminated.");
+            Await.result(system.whenTerminated(), Duration.create(60, TimeUnit.SECONDS));
+            System.out.println("Actor system terminated.");
+        } catch (Exception e) {
+            System.err.println("Error waiting for termination: " + e.getMessage());
         }
     }
 

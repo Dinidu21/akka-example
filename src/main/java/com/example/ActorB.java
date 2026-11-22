@@ -4,7 +4,6 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
 
-
 public class ActorB extends AbstractActor {
 
     public static Props props() {
@@ -20,24 +19,16 @@ public class ActorB extends AbstractActor {
     }
 
     private void onMessageA(MessageA msg) {
-        System.out.println("Actor B received Message A : "+ msg.text + " from " + getSender());
-        getSender().tell(new MessageB(42), getSelf());
-        for (int i=0; i<10; i++){
-            System.out.println("Actor B doing work "+i);
-        }
+        System.out.println("Actor B received Message A: " + msg.text + " from " + getSender());
     }
 
     private void onMessageB(MessageB msg) {
-        System.out.println("Actor B received Message B : "+ msg.number + " from " + getSender());
-        if(msg.number == 999) {
-            getSender().tell(new MessageA("Goodbye!"), getSelf());
+        System.out.println("Actor B received Message B: " + msg.number + " from " + getSender());
+        int additional = msg.number;
+        for (int i = 0; i < 10; i++) {
+            additional += i;
         }
-        else {
-            getSender().tell(new MessageB(999), getSelf());
-        }
-        for (int i=0; i<10; i++){
-            System.out.println("Actor B doing more work "+i);
-        }
-
+        System.out.println("Actor B additional sum: " + additional);
+        getSender().tell(new MessageB(additional), getSelf());
     }
 }
