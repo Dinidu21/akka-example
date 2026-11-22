@@ -44,8 +44,6 @@ bin/
 lib/
 lib_managed/
 src_managed/
-main/
-test/
 project/project/
 project/target/
 target/
