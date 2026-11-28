@@ -1,17 +1,17 @@
 package com.example;
 
 import akka.actor.AbstractActor;
-import akka.actor.Props;
 
 /**
  * ActorB performs the second half of the prime search (51 to 100).
  *
  * Concept: Actors are asynchronous and location-transparent. ActorB receives a
- * message from ActorA, does its own work, and sends a result back to the sender.
+ * message from ActorA, does its own work, and sends a result back to the
+ * sender.
  *
  * Message handling:
- *   - "continue": finds and prints primes between 51 and 100, then sends a
- *     "Goodbye!" message back to the sender (ActorA).
+ * - "continue": finds and prints primes between 51 and 100, then sends a
+ * "Goodbye!" message back to the sender (ActorA).
  */
 public class ActorB extends AbstractActor {
 
@@ -39,9 +39,11 @@ public class ActorB extends AbstractActor {
     }
 
     private static boolean isPrime(int n) {
-        if (n < 2) return false;
+        if (n < 2)
+            return false;
         for (int i = 2; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) return false;
+            if (n % i == 0)
+                return false;
         }
         return true;
     }

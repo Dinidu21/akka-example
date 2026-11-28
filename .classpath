@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/com/typesafe/akka/akka-actor_2.13/2.6.5/akka-actor_2.13-2.6.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/com/typesafe/akka/akka-actor-typed_2.13/2.6.5/akka-actor-typed_2.13-2.6.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/com/typesafe/akka/akka-slf4j_2.13/2.6.5/akka-slf4j_2.13-2.6.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/org/scala-lang/scala-library/2.13.1/scala-library-2.13.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.13/0.9.0/scala-java8-compat_2.13-0.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/com/typesafe/config/1.4.0/config-1.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
